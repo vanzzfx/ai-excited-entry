@@ -4,19 +4,20 @@
 [![rank](https://make.fun/badge/ai-excited-01/vanzzfx/ai-excited-entry/rank.svg)](https://make.fun/badge/ai-excited-01/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=ai-excited-01)
 [![reward](https://make.fun/badge/ai-excited-01/vanzzfx/ai-excited-entry/reward.svg)](https://make.fun/bounty/ai-excited-01?utm_source=github&utm_medium=readme&utm_campaign=ai-excited-01)
 
-Entry for the make.fun bounty **“Make the AI judge excited”** (`ai-excited-01`).
+Entry for the make.fun bounty **"Make the AI judge excited"** (`ai-excited-01`).
 
 ## Concept
-A cinematic fantasy scene of a colossal fire dragon dominating the night sky above a neon cyberpunk city. Blazing membrane wings, glowing scales, horns, and a torrent of fire breath cut through lightning, moonlight, drifting embers, and reflections on rain-slick streets. The image emphasizes a large clear subject, bold color contrast, and dynamic motion to catch a vision-model judge’s eye.
+A cinematic, procedurally generated fantasy scene: a colossal fire dragon dominates the night sky above a neon cyberpunk metropolis. Its blazing body, membrane wings, horns, glowing eye, and torrent of fire breath cut through a moonlit, star-speckled sky over dense neon skyscrapers and rain-slick reflective streets—crafted for a bold silhouette, vivid color contrast, and immediate visual impact.
 
 ## Implementation
-- `main.ts` — dependency-free Node.js script (built-in `fs`, `path`, `zlib` only), with no network access.
-- Renders a 1024×1024 RGB scene procedurally via deterministic math: fixed seed, value noise/fBm, analytic shapes, distance-field composition, additive glows, and particle effects (no timestamps, no unseeded randomness).
-- Encodes the image as PNG (zlib level 9) and writes it to `output/entry.png`.
+- `main.ts` — dependency-free Node.js script (built-in `fs`, `path`, `zlib` only), no network access.
+- Renders a 1024×1024 RGBA scene procedurally using deterministic math with a fixed seed (no timestamps, no unseeded randomness).
+- Composes the image from layered primitives: sky gradient and stars, moon, neon buildings and windows, dragon body/wings/head, fire-breath particles, and wet-street reflections.
+- Encodes the result as PNG (zlib level 9) and writes it to `output/entry.png`.
 
 ## Run
 ```bash
-node --experimental-strip-types main.ts
+node main.ts
 ```
 Running the program multiple times produces byte-identical output.
 
